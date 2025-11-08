@@ -23,6 +23,9 @@ gem "jbuilder"
 gem 'sorcery', '0.16.3'
 
 gem 'rails-i18n', '~> 7.0.0'
+
+gem 'draper', '4.0.2'
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
@@ -47,6 +50,8 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  gem "faker"
 end
 
 group :development do
