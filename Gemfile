@@ -52,6 +52,9 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   gem "faker"
+
+  gem 'carrierwave', '~> 3.0'
+  
 end
 
 group :development do
