@@ -20,17 +20,27 @@
                 <%= link_to edit_board_path(@board), id: "button-edit-#{@board.id}" do %>
                   <i class='bi bi-pencil-fill'></i>
                 <% end %>
-                <%= link_to board_path(@board), id: "button-delete-#{@board.id}", data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') } do %>
+                <%= link_to board_path(@board), id: "button-delete-#{@board.id}", class: "ms-2", data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') } do %>
                   <i class="bi bi-trash-fill"></i>
                 <% end %>
               </div>
               <% end %>
-              </div>
             </div>
-            <p><%= simple_format(@board.body) %></p>
           </div>
-        </article>
-      </div>
+          <p><%= simple_format(@board.body) %></p>
+        </div>
+      </article>
     </div>
+  </div>
+  <%= render 'comments/form', comment: @comment, board: @board %>
+  <!-- コメント一覧の表示も追加することをお勧めします -->
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <table class="table">
+        <tbody id="table-comment">
+          <%= render @comments %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
-          
