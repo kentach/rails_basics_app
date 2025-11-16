@@ -55,6 +55,8 @@ group :development, :test do
 
   gem 'carrierwave', '~> 3.0'
   
+  gem 'kaminari', '1.2.2'
+  gem 'bootstrap5-kaminari-views'
 end
 
 group :development do
