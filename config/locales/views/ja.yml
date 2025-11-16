@@ -8,11 +8,16 @@ ja:
       email: メールアドレス
       password: パスワード
   defaults:
+    create: 作成
     post: 投稿
+    delete_confirm: 削除しますか？
     flash_message:
       created: "%{item}を作成しました"
       not_created: "%{item}を作成出来ませんでした"
       require_login: ログインしてください
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新出来ませんでした"
+      deleted: "%{item}を削除しました"
   header:
     login: ログイン
     logout: ログアウト
@@ -46,3 +51,9 @@ ja:
       title: 掲示板詳細
     index:
       title: 掲示板一覧
+    edit:
+      title: 掲示板編集
+    destroy:
+      title: 掲示板削除
+    update:
+      title: 掲示板更新
