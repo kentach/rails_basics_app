@@ -32,7 +32,7 @@ class BoardsController < ApplicationController
       if @board.update(board_params)
         redirect_to board_path(@board), success: t('defaults.flash_message.updated', item: Board.model_name.human)
       else
-        danger.now[:danger] = t('defaults.flash_message.not_updated', item: Board.model_name.human)
+        flash.now[:danger] = t('defaults.flash_message.not_updated', item: Board.model_name.human)
         render :edit, status: :unprocessable_entity
       end
     end
@@ -41,6 +41,11 @@ class BoardsController < ApplicationController
         board = current_user.boards.find(params[:id])
         board.destroy!
         redirect_to boards_path, success: t('defaults.flash_message.deleted', item: Board.model_name.human), status: :see_other
+    end
+
+    def bookmarks
+        @bookmark_boards = current_user.bookmark_boards.includes(:user).order(created_at: :desc)
+        #bookmark_boardsはUserモデルから来ている。「ログインユーザーがブックマークした Board 一覧」という意味。
     end
 
 private
