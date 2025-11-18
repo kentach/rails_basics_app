@@ -24,7 +24,7 @@ gem 'sorcery', '0.16.3'
 
 gem 'rails-i18n', '~> 7.0.0'
 
-gem 'draper', '4.0.2'
+gem 'draper', '4.0.6'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
